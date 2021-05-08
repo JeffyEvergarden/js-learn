@@ -1,4 +1,4 @@
-var MyPromise = require('./myPromise')
+var MyPromise = require('./myPromise2')
 
 let c = new MyPromise((resolve) => {
   resolve(1)
@@ -7,7 +7,9 @@ let c = new MyPromise((resolve) => {
 let p = c.then(
   (i) => {
     console.log(i)
-    return p
+    return new MyPromise((resolve) => {
+      resolve(3)
+    })
   },
   (err) => {
     // 实际上这步被忽略了

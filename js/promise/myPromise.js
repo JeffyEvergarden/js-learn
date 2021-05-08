@@ -154,4 +154,24 @@ function parse(origin, fn, val, resolve, reject) {
   }
 }
 
+FullPromise.prototype.all = function (arr) {
+  let newArr = {}
+  return new Promise((reslove, reject) => {
+    arr.forEach((promise, i) => {
+      promise.then(
+        (val) => {
+          newArr[i] = val
+          if (Object.keys(newArr) === arr.length) {
+            reslove(Object.keys(newArr).map((i) => newArr[i]))
+          }
+          return val
+        },
+        (reason) => {
+          reject(reason)
+        }
+      )
+    })
+  })
+}
+
 module.exports = FullPromise
