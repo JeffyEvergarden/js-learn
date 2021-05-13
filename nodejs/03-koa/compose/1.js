@@ -36,6 +36,4 @@ function fn3(next) {
 
 const middlewares = [fn1, fn2, fn3]
 const finalFn = compose(middlewares)
-finalFn(() => {
-  console.log('fn')
-})
+finalFn()
