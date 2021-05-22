@@ -26,18 +26,12 @@ function mergeArray(arr, l, mid, r) {
     j = mid + 1
   let newArr = []
   let k = l
-  while (i <= mid && j <= r) {
-    if (arr[i] < arr[j]) {
+  while (i <= mid || j <= r) {
+    if ((i <= mid && arr[i] < arr[j]) || j > r) {
       newArr[k++] = arr[i++]
     } else {
       newArr[k++] = arr[j++]
     }
-  }
-  while (i <= mid) {
-    newArr[k++] = arr[i++]
-  }
-  while (j <= r) {
-    newArr[k++] = arr[j++]
   }
   for (let i = l; i <= r; i++) {
     arr[i] = newArr[i]
