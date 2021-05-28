@@ -1,7 +1,7 @@
 function getUrlParams(url) {
   const result = {}
 
-  const reg = /[?&][^?&]+=[^?&]+/g
+  const reg = /[\?&][^?&]+=[^\?&]+/g
 
   const arr = url.match(reg)
 

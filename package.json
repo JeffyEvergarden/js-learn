@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@vue/compiler-core": "^3.0.11",
     "babel-cli": "^6.26.0",
     "koa": "^2.13.1",
     "mongodb": "^3.6.5",

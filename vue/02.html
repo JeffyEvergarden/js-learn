@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <p class="wrap"></p>
+      <h1>一起学前端 !!! {{ des }}</h1>
+      <a href="http://baidu.com">google</a>
+    </div>
+    <script src="./compile.js" type="module">
+      import { baseCompile } from '@vue/compiler-core'
+
+      let app = document.getElementById('suyan-app')
+
+      let ret = baseCompile(app.innerHTML)
+
+      console.log(ret)
+    </script>
+  </body>
+</html>
